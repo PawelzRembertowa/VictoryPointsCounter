@@ -1,12 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div id="container">
+
 <div style="text-align:center">
    <img width="1200" src="http://www.the-ninth-age.com/wcf/images/styleLogo-a344029a0f10c01cedf06088bdcb60454a326cac.jpg">
-  <h1>
+  <h1 style="margin-bottom: 25px;">
     Welcome to {{title}}! 
   </h1>
  
 </div>
-<div>
+
+
+<div id="two_points_in_center">
   <div id="points_label" >
   <h2>Yours points here  </h2>
   </div>
@@ -15,8 +19,10 @@
   </div>
   <div style="clear:both"></div>
 </div>
+
+
 <!-- INPUTY NA PUNKTY -->
-<div>
+<div id="two_points_in_center">
   <div id="points_label" >
   <input [(ngModel)]="first" class="form-control input-lg" id="inputlg" type="number">
   </div>
@@ -25,22 +31,26 @@
   </div>
   <div style="clear:both"></div>
 </div>
-<h1 id="score_id">Score</h1>
+
+
 <!-- BUTTON -->
- <div id="wrapper"> <button (click)="countScore()">get score</button></div>
-<!-- WYNIKI -->
-<div>
+ <div class="wrapper"> <button (click)="countScore()">get score</button></div>
+
+
+ <!-- WYNIKI -->
+<div id="two_points_in_center">
   <div id="score_points_label" >
     {{ left_result }}
-  <!-- <output id="output_id"></output> -->
   </div>
   <div id="score_points_label">
-    <label>{{ right_result }}</label>
-  <!-- <output id="output_id"></output>  -->
+    {{ right_result }}
   </div>
   <div style="clear:both"></div>
 </div>
 
-<div id="footer_id">
+
+<div class="wrapper" id="footer_id">
 Copyright &copy; 2017 deKraken_Studio - All Rights Reserved
+</div>
+
 </div>
