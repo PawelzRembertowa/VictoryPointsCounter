@@ -1,4 +1,6 @@
 import { Component, Input, Output } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,8 @@ import { Component, Input, Output } from '@angular/core';
 })
 export class AppComponent {
   title = 'Victory Points Counter';
-  
+  private data: Observable<number>;
+
   first: number;
   second: number;
   sum: number;
@@ -20,24 +23,31 @@ export class AppComponent {
   right_result: number;
 
 
-  countScore(first: number, second: number){
-      if (isNaN(this.first) || isNaN(this.second)){
-        alert("Put numbers into inputs.");
+  // countScore(first: number, second: number){
+  //     if (isNaN(this.first) || isNaN(this.second)){
+  //       alert("Put numbers into inputs.");
         
-    } else { 
+  //   } else { 
+  init(){
     
+    setTimeout(function(){
+      console.log("Odliczamy 5 sec...");
+
     this.sum = this.first + this.second;
-    
     this.first_percent = (this.first * 100)/this.sum;
     this.second_percent = 100 - this.first_percent;
-    
     this.left_score = (20 * this.first_percent)/100;
     this.right_score = 20 - this.left_score;
     //zaokraglanie wynikow do liczby calkowitej
     this.left_result = Number(this.left_score.toFixed(0));
     this.right_result = Number(this.right_score.toFixed(0));
-    }
-   
-  }
+    console.log("Wyniki policzone");
+    });
+    
+    
+    // if (this.second == NaN){
+    //   this.right_result = 0;
+    //   }
   
+  }
 }
